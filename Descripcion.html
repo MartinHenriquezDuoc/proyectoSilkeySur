@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silkey Sur</title>
+    <style>
+        /*Estilos para la ventana emergente*/ 
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color:white;
+            padding: 20px;
+            border: 1px, solid black;
+            z-index: 9999;
+        }
+
+        .close{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Menú con el logo de la cooperativa -->
+        <!-- Aquí va tu menú y logo -->
+    </header>
+
+    <main>
+        <!-- Carrusel de imágenes con los productos destacados -->
+        <!-- Aquí va tu carrusel de imágenes -->
+        
+        <!-- Contenedor de productos -->
+        <div class="products-container">
+            <!-- Ejemplo de un producto -->
+            <div class="product" data-id="1">
+                <img src="producto1.jpg" alt="Producto 1">
+                <h3>Producto 1</h3>
+                <!-- Descripción oculta del Producto 1 -->
+                <div class="description" style="display: none;">
+                    <p>Descripción del Producto 1.</p>
+                </div>
+            </div>
+            <!-- Otros productos aquí -->
+        </div>
+
+        <!-- Ventana emergente para mostrar la descripción detallada -->
+        <div class="popup" id="popup">
+            <span class="close" id="close">&times;</span>
+            <h2 id="product-title"></h2>
+            <p id="product-description"></p>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Formulario de contacto -->
+        <!-- Aquí va tu formulario de contacto -->
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const products = document.querySelectorAll('.product');
+            const popup = document.getElementById('popup');
+            const closeButton = document.getElementById('close');
+            const title = document.getElementById('product-title');
+            const description = document.getElementById('product-description');
+
+            products.forEach(product => {
+                product.addEventListener('click', function() {
+                    // Obtener la información del producto seleccionado
+                    const titleText = product.querySelector('h3').textContent;
+                    const descriptionText = product.querySelector('.description').innerHTML;
+
+                    // Mostrar la ventana emergente con la información del producto
+                    title.textContent = titleText;
+                    description.innerHTML = descriptionText;
+                    popup.style.display = 'block';
+                });
+            });
+
+            // Cerrar la ventana emergente al hacer clic en el botón de cerrar
+            closeButton.addEventListener('click', function() {
+                popup.style.display = 'none';
+            });
+        });
+    </script>$
+</body>
+</html>
