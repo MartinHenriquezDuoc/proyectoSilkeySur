@@ -125,7 +125,25 @@
         e.stopPropagation();
     });
 
+// Función de búsqueda
+function searchProducts() {
+    var input, filter, grid, products, product, name, i, txtValue;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    grid = document.getElementById('productGrid'); // Este es el identificador del contenedor de productos que proporcionaste antes
+    products = grid.getElementsByClassName('isotope-item');
 
+    for (i = 0; i < products.length; i++) {
+        product = products[i];
+        name = product.getElementsByClassName('stext-104')[0]; // Este es el identificador de la clase que contiene el nombre del producto
+        txtValue = name.textContent || name.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            product.style.display = "";
+        } else {
+            product.style.display = "none";
+        }
+    }
+}
     /*==================================================================
     [ Isotope ]*/
     var $topeContainer = $('.isotope-grid');
