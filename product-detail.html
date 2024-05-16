@@ -713,7 +713,7 @@
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-product-link" data-product-id="14" data-product-name="SHAMPOO PARA CABELLOS CON COLORACIÓN 1500 ML" data-product-price="$27.990" data-product-description="Controla el sebo, mantiene el cabello limpio por más tiempo. Aporta soltura y ligereza. Este shampoo está formulado con Sebaryl®, un complejo de aminoácidos, péptidos sulfurados, vitaminas y Zinc que controla la producción de sebo, y extracto de Limón que realiza una acción astringente. Su bajo pH y los ácidos de fruta presentes evitan que el cabello se reengrase rápidamente, manteniéndolo limpio por más tiempo.">
 										SHAMPOO PARA CABELLOS CON COLORACIÓN 1500 ML
 									</a>
 
@@ -1290,21 +1290,23 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Hecho
 			link.addEventListener('click', function(event) {
 				event.preventDefault(); // Evitar que el enlace abra la página
 	
-				var productId = link.closest('.block2').id; // Obtener el ID del elemento padre del enlace
-				var productInfo = getProductInfo(productId); // Obtener la información del producto
-				showProductInfo(productInfo); // Mostrar la información del producto
+				// Obtener los datos del producto desde los atributos de datos del enlace
+				var productId = link.getAttribute('data-product-id');
+				var productName = link.getAttribute('data-product-name');
+				var productPrice = link.getAttribute('data-product-price');
+				var productDescription = link.getAttribute('data-product-description');
+	
+				// Mostrar la información del producto en el área designada
+				var productDetailHTML = `
+					<h2>${productName}</h2>
+					<p>Precio: ${productPrice}</p>
+					<p>Descripción: ${productDescription}</p>
+					<!-- Agrega más detalles del producto si es necesario -->
+				`;
+				document.getElementById('product-detail').innerHTML = productDetailHTML;
 			});
 		});
-	
-		function getProductInfo(productId) {
-			// Implementa la lógica para obtener la información del producto aquí
-			// Retorna un objeto con la información del producto
-		}
-	
-		function showProductInfo(productInfo) {
-			// Muestra la información del producto, por ejemplo, en un cuadro de diálogo modal
-		}
-	</script>
+	</script>	
 
 </body>
 </html>
