@@ -1035,6 +1035,32 @@
 				</div>
 			</div>
 		</div>
+
+		<script>
+			// Obtener todos los enlaces de productos y agregar un controlador de eventos a cada uno
+			var productLinks = document.querySelectorAll('.js-product-link');
+			productLinks.forEach(function(link) {
+				link.addEventListener('click', function(event) {
+					event.preventDefault(); // Evitar que el enlace abra la página
+		
+					// Obtener los datos del producto desde los atributos de datos del enlace
+					var productId = link.getAttribute('data-product-id');
+					var productName = link.getAttribute('data-product-name');
+					var productPrice = link.getAttribute('data-product-price');
+					var productDescription = link.getAttribute('data-product-description');
+		
+					// Mostrar la información del producto en el área designada
+					var productDetailHTML = `
+						<h2>${productName}</h2>
+						<p>Precio: ${productPrice}</p>
+						<p>Descripción: ${productDescription}</p>
+						<!-- Agrega más detalles del producto si es necesario -->
+					`;
+					document.getElementById('product-detail').innerHTML = productDetailHTML;
+				});
+			});
+		</script>
+		
 	</section>
 		
 
@@ -1281,32 +1307,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Hecho
 		});
 	</script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
-
-	<script>
-		// Obtener todos los enlaces de productos y agregar un controlador de eventos a cada uno
-		var productLinks = document.querySelectorAll('.js-product-link');
-		productLinks.forEach(function(link) {
-			link.addEventListener('click', function(event) {
-				event.preventDefault(); // Evitar que el enlace abra la página
-	
-				// Obtener los datos del producto desde los atributos de datos del enlace
-				var productId = link.getAttribute('data-product-id');
-				var productName = link.getAttribute('data-product-name');
-				var productPrice = link.getAttribute('data-product-price');
-				var productDescription = link.getAttribute('data-product-description');
-	
-				// Mostrar la información del producto en el área designada
-				var productDetailHTML = `
-					<h2>${productName}</h2>
-					<p>Precio: ${productPrice}</p>
-					<p>Descripción: ${productDescription}</p>
-					<!-- Agrega más detalles del producto si es necesario -->
-				`;
-				document.getElementById('product-detail').innerHTML = productDetailHTML;
-			});
-		});
-	</script>	
+	<script src="js/main.js"></script>		
 
 </body>
 </html>
