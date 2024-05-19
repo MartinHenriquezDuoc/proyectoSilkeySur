@@ -340,6 +340,10 @@
                 <span>Contraseña</span>
                 <input type="password" id="passwordSignUp"/>
             </label>
+            <label>
+                <span>Confirmar Contraseña</span>
+                <input type="password" id="confirmPasswordSignUp"/>
+            </label>
             <button type="button" class="submit" onclick="signUp()">Registrarse</button>
         </div>
     </div>
@@ -370,6 +374,7 @@
         var name = document.getElementById("nameSignUp").value;
         var email = document.getElementById("emailSignUp").value;
         var password = document.getElementById("passwordSignUp").value;
+        var confirmPassword = document.getElementById("confirmPasswordSignUp").value;
 
         // Validación de nombre
         if (!validateName(name)) {
@@ -380,6 +385,12 @@
         // Validación de correo electrónico
         if (!validateEmail(email)) {
             alert("Por favor ingrese un correo electrónico válido.");
+            return;
+        }
+
+        // Verificar si las contraseñas coinciden
+        if (password !== confirmPassword) {
+            alert("Las contraseñas no coinciden. Por favor, vuelva a ingresar la contraseña.");
             return;
         }
 
