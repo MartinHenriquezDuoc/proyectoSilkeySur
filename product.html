@@ -578,7 +578,7 @@
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="product-detail.html?product_id=14" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									SHAMPOO PARA CABELLOS CON COLORACIÓN 1500 ML
 								</a>
 
@@ -1129,37 +1129,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Hecho
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			// Manejar la apertura del modal al hacer clic en el botón "Vista Rápida"
-			document.querySelectorAll('.block2-btn').forEach(function(button) {
-				button.addEventListener('click', function(event) {
-					event.preventDefault();
-					console.log('Botón de vista rápida clickeado');
-					const modalId = button.getAttribute('data-target');
-					console.log('ID del modal:', modalId);
-					const modal = document.querySelector(modalId);
-					console.log('Modal seleccionado:', modal);
-					if (modal) {
-						modal.style.display = 'block';
-					} else {
-						console.error("Modal no encontrado:", modalId);
-					}
-				});
-			});
-			
-			// Manejar el cierre del modal al hacer clic en el botón de cierre
-			document.querySelectorAll('.js-hide-modal1').forEach(function(button) {
-				button.addEventListener('click', function(event) {
-					event.preventDefault();
-					const modal = button.closest('.js-modal1');
-					if (modal) {
-						modal.style.display = 'none';
-					}
-				});
-			});
-		});                  
-	</script>
 
 </body>
 </html>

@@ -334,9 +334,9 @@
 							<div class="slick3 gallery-lb">
 								<div class="item-slick3" data-thumb="images/product-12.jpg">
 									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-12.jpg" alt="IMG-PRODUCT">
+										<img src="images/product-14.jpg" alt="IMG-PRODUCT">
 
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-12.jpg">
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-14.jpg">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
@@ -344,9 +344,9 @@
 
 								<div class="item-slick3" data-thumb="images/product-12.jpg">
 									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-12.jpg" alt="IMG-PRODUCT">
+										<img src="images/product-14.jpg" alt="IMG-PRODUCT">
 
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-12.jpg">
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-14.jpg">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
@@ -354,9 +354,9 @@
 
 								<div class="item-slick3" data-thumb="images/product-12.jpg">
 									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-12.jpg" alt="IMG-PRODUCT">
+										<img src="images/product-14.jpg" alt="IMG-PRODUCT">
 
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-12.jpg">
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-14.jpg">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
@@ -369,7 +369,7 @@
 				<div class="col-md-6 col-lg-5 p-b-30">
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
 						<h4 class="mtext-105 cl2 js-name-detail p-b-14">
-							SHAMPOO PARA CABELLOS GRASOS 1500 ML
+							SHAMPOO PARA CABELLOS CON COLORACIÓN 1500 ML
 						</h4>
 
 						<span class="mtext-106 cl2">
@@ -478,12 +478,11 @@
 						<div class="tab-pane fade show active" id="description" role="tabpanel">
 							<div class="how-pos2 p-lr-15-md">
 								<p class="stext-102 cl6">
-									SHAMPOO DEYERLIPARA CABELLOS GRASOS 1500 ML,
-									Controla el sebo, mantiene el cabello limpio por más tiempo. 
-									Aporta soltura y ligereza.
-									Componentes: Sebaryl® es un complejo de aminoácidos, péptidos sulfurados, vitaminas y Zinc que controla la producción de sébum.
-									Extracto de Limón: Realiza acción astringente.
-									Los ácidos de fruta, presentes en la formulación y su bajo pH, evitan que el cabello se reengrase rápidamente, manteniéndolo limpio por más tiempo..
+									SHAMPOO PARA CABELLOS CON COLORACIÓN 1500 ML,
+									Controla el sebo, mantiene el cabello limpio por más tiempo.
+								    Aporta soltura y ligereza.
+								    Este shampoo está formulado con Sebaryl®, un complejo de aminoácidos, péptidos sulfurados, vitaminas y Zinc que controla la producción de sebo, y extracto de Limón que realiza una acción astringente.
+								    Su bajo pH y los ácidos de fruta presentes evitan que el cabello se reengrase rápidamente, manteniéndolo limpio por más tiempo.
 								</p>
 							</div>
 						</div>
@@ -529,7 +528,7 @@
 											</span>
 
 											<span class="stext-102 cl6 size-206">
-												SHAMPOO DEYERLIPARA CABELLOS GRASOS 1500 ML.
+												SHAMPOO DEYERLI PARA CABELLOS CON COLORACIÓN 1500 ML.
 											</span>
 										</li>
 
@@ -711,13 +710,13 @@
 						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-pic hov-img0">
-								<img src="images/product-14.jpg" alt="IMG-PRODUCT" style="max-width: 200px; max-height: 200px;"> <!-- Ajusta el tamaño máximo aquí -->
+								<img src="images/product-12.jpg" alt="IMG-PRODUCT" style="max-width: 200px; max-height: 200px;"> <!-- Ajusta el tamaño máximo aquí -->
 							</div>
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l ">
 									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-										SHAMPOO PARA CABELLOS CON COLORACIÓN 1500 ML
+										SHAMPOO PARA CABELLOS GRASOS 1500 ML
 									</a>
 
 									<span class="stext-105 cl3">
@@ -1026,6 +1025,16 @@
 		</div>
 </section>
 
+<script>
+    // Recuperar el parámetro product_id de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('product_id');
+
+    // Lógica para cargar los detalles del producto con el productId
+    // Puedes usar AJAX para cargarlos desde un servidor o simplemente mostrar los detalles aquí mismo.
+    // Por ejemplo:
+    document.getElementById('product-details').innerHTML = `<p>Detalles del producto ${productId}</p>`;
+</script>
 		
 
 	<!-- Footer -->
@@ -1275,3 +1284,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Hecho
 
 </body>
 </html>
+
+
