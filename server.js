@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 
 MercadoPago.configure({
-    access_token: 'TEST-ACCESS-TOKEN' // Usa tu access token aquí
+    access_token: 'TEST-710084918786297-052121-2c27e4166653e3ca3b0ccf576414df7a-363340795'
 });
 
 app.post('/create_preference', (req, res) => {
