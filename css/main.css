@@ -3253,7 +3253,6 @@ input.num-product::-webkit-inner-spin-button {
 
 }
 
-
 /*//////////////////////////////////////////////////////////////////
 [ SM ]*/
 @media (max-width: 575px) {
@@ -3328,5 +3327,12 @@ input.num-product::-webkit-inner-spin-button {
   .respon3 {
     padding: 20px;
   }
+
+/*//////////////////////////////////////////////////////////////////
+[ MAPS ]*/
+#google_map {
+  height: 700px; /* O el valor que desees para la altura del mapa */
+}
+
 
 }
