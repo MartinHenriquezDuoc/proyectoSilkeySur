@@ -13,11 +13,11 @@
             var map_zoom = selector_map.attr('data-zoom');
 
             if (img_pin == null) {
-                img_pin = 'images/icons/location.png';
+                img_pin = '';
             }
             if (data_map_x == null || data_map_y == null) {
-                data_map_x = 40.007749;
-                data_map_y = -93.266572;
+                data_map_x = -36.82699;
+                data_map_y = -73.04977;
             }
             if (scrollwhell == null) {
                 scrollwhell = 0;
@@ -28,7 +28,7 @@
             }
 
             if (map_zoom == null) {
-                map_zoom = 5;
+                map_zoom = 15;
             }
 
             var style = [
@@ -37,10 +37,10 @@
                     "elementType": "geometry",
                     "stylers": [
                     {
-                        "color": "#e9e9e9"
+                        "color": "#a0c8e0"
                     },
                     {
-                        "lightness": 17
+                        "lightness": 20
                     }
                     ]
                 },
@@ -124,7 +124,7 @@
                     "elementType": "geometry",
                     "stylers": [
                     {
-                        "color": "#dedede"
+                        "color": "#d9ead3"
                     },
                     {
                         "lightness": 21
@@ -163,7 +163,7 @@
                     "elementType": "labels.icon",
                     "stylers": [
                     {
-                        "visibility": "off"
+                        "visibility": "on"
                     }
                     ]
                 },
@@ -220,16 +220,17 @@
             if (selector_map !== undefined) {
                 var map = new google.maps.Map(document.getElementById('google_map'), {
                     zoom: Number(map_zoom),
-                    zoomControl: false,  
+                    zoomControl: true,  
                     disableDoubleClickZoom: true,
-                    scrollwheel: scrollwhell,
+                    scrollwheel: false,
                     navigationControl: true,
                     mapTypeControl: false,
                     scaleControl: false,
                     draggable: draggable,
-                    styles: style,
+                    styles: false,
                     center: new google.maps.LatLng(latitude, longitude),
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    height: '700px'
                 });
             }
 

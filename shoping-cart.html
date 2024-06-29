@@ -284,10 +284,6 @@
 						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
 							Ver Carro
 						</a>
-
-						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
-							Pagar
-						</a>
 					</div>
 				</div>
 			</div>
@@ -586,9 +582,12 @@
 							</div>
 						</div>
 
-						<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							Pagar
-						</button>
+						<div id="checkout-container">
+							<button id="checkout-button" class="flex-c-m stext-101 cl0 size-119 bg3 bor2 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
+								Pagar
+							</button>
+						</div>
+						<div id="checkout"></div>
 					</div>
 				</div>
 			</div>
@@ -757,6 +756,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Hecho
 		</span>
 	</div>
 
+	<!-- librería de Mercado Pago -->
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+
+
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -795,6 +798,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Hecho
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="js/mercadopago.js"></script>
 
 </body>
 </html>
