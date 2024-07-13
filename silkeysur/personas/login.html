@@ -1,0 +1,47 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <div class="cont">
+        <div class="form sign-in">
+            <h2>Bienvenido</h2>
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <p class="forgot-pass" onclick="forgotPassword()">¿Olvidó su Contraseña?</p>
+                <button type="submit" class="submit">Ingresar</button>
+            </form>
+        </div>
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img__text m--up">
+                    <h3>¿No tienes una cuenta? ¡Por favor regístrese!</h3>
+                </div>
+                <div class="img__text m--in">
+                    <h3>Si ya tienes una cuenta, simplemente inicia sesión.</h3>
+                </div>
+                <div class="img__btn">
+                    <span class="m--up">¡Inscribirse!</span>
+                    <span class="m--in">Ingresar</span>
+                </div>
+            </div>
+            <div class="form sign-up">
+                <h2>Crea tu cuenta</h2>
+                <form method="POST" action="{% url 'register' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="submit">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.img__btn').addEventListener('click', function() {
+            document.querySelector('.cont').classList.toggle('s--signup');
+        });
+
+        function forgotPassword() {
+            alert("Se ha enviado un correo al usuario solicitando recuperar su contraseña.");
+        }
+    </script>
+{% endblock %}

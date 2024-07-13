@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Trabajadores</title>
+</head>
+<body>
+    <h1>Listado de Trabajadores</h1>
+    <ul>
+        {% for trabajador in trabajadores %}
+            <li>{{ trabajador.persona.nombre }} - {{ trabajador.cargo }} - {{ trabajador.salario }}</li>
+        {% empty %}
+            <li>No hay trabajadores registrados.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
